@@ -1,0 +1,19 @@
+name: tempest
+confinement: strict
+version: 0.1
+architectures: [ amd64 ]
+summary: "Tempest for Openstack"
+#icon: assets/ci-dice-icon-256.png
+description: |
+    Bigger descrption here
+    Contact and development:  freenode irc #openstack-charms
+apps:
+  tempest:
+    command: tempest
+parts:
+  tempest:
+    plugin: python2
+    source: git@github.com:openstack/tempest.git
+    source-type: git
+    stage-packages: [python, python-dev, python-virtualenv, python-setuptools, python-gobject-dev, virtualenvwrapper, libtool, libffi-dev, libssl-dev, autoconf, bison, libglib2.0-dev, portaudio19-dev, python-psutil]
+
